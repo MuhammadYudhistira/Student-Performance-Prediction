@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\styles.css" type="text/css">
+    <title>Student Performance Prediction</title>
+</head>
+<body>
+    <div class="form_container">
+        <h3>Student Performance Prediction</h3>
+        <form action="/" method="POST">
+            <label for="parent">Tingkat Pendidikan Orang Tua</label>
+            <select name="parent" id="parent">
+                <option selected>Open this select menu</option>
+                <option value="0">D3</option>
+                <option value="1">S1</option>
+                <option value="2">SMA</option>
+                <option value="3">SomeCollege</option>
+                <option value="4">S2</option>
+              </select>
+            <label for="race">Race: </label>
+                <select name="race" id="race">
+                    <option selected>Open this select menu</option>
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                    <option value="3">D</option>
+                    <option value="4">E</option>
+                  </select>
+            <label for="gender">Jenis Kelamin: </label>
+            <select name="gender" id="gender">
+                <option selected>Open this select menu</option>
+                <option value="0">Perempuan</option>
+                <option value="1">Laki-Laki</option>
+            </select>
+            <label for="lanche">Makan Siang:  </label>
+            <select name="lanche" id="lanche">
+                <option selected>Open this select menu</option>
+                <option value="0">Free</option>
+                <option value="1">Normal</option>
+            </select>
+            <label for="test_prep">Kursus Pesiapan: </label>
+            <select name="test_prep" id="test_prep">
+                <option selected>Open this select menu</option>
+                <option value="0">Ya</option>
+                <option value="1">Tidak</option>
+            </select>
+            <label for="math_score">Nilai Matematika: </label>
+            <input name="math_score" type="number" id="math_score" min="0" max="100" required>
+            </select>
+            <label for="wrt_score">Nilai Menulis: </label>
+            <input name="wrt_score" type="number" id="wrt_score" min="0" max="100" required>
+            </select>
+        <button type="submit">Submit</button>
+        </form>
+        {% if result == 1 %}
+            <div class="resultado aprovado">{{proba}}%</div>
+        {% elif  result == 0 %}
+            <div class="resultado reprovado">{{proba}}%</div>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
