@@ -14,12 +14,11 @@ def home():
     if request.method == 'POST':
         gender = int(request.form.get('gender'))
         parent = int(request.form.get('parent'))
-        race = int(request.form.get('race'))
         lanche = int(request.form.get('lanche'))
         test_prep = int(request.form.get('test_prep'))
         math_score = int(request.form.get('math_score'))
         wrt_score = int(request.form.get('wrt_score'))
-        X = np.array([gender, parent, race, lanche, test_prep, math_score, wrt_score]).reshape(1, -1)
+        X = np.array([gender, parent, lanche, test_prep, math_score, wrt_score]).reshape(1, -1)
         result = int(model.predict(X))
         persen = np.amax(model.predict_proba(X))*100
         if result== 1 :
